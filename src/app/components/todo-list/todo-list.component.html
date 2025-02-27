@@ -1,1 +1,29 @@
-<p>todo-list works!</p>
+<div class="todo-container">
+    <h2>To-Do List</h2>
+    
+    <div *ngIf="error" class="error-message">
+      {{ error }}
+    </div>
+    
+    <app-todo-form 
+      [todo]="selectedTodo" 
+      (saveTodo)="onSaveTodo($event)" 
+      (cancelEdit)="onCancelEdit()"
+    ></app-todo-form>
+    
+    <div class="todo-list">
+      <div *ngIf="loading" class="loading">Loading...</div>
+      
+      <div *ngIf="!loading && todos.length === 0" class="no-todos">
+        No tasks available. Add a new task above!
+      </div>
+      
+      <app-todo-item 
+        *ngFor="let todo of todos" 
+        [todo]="todo"
+        (delete)="onDeleteTodo($event)"
+        (edit)="onEditTodo($event)"
+        (toggleComplete)="onToggleComplete($event)"
+      ></app-todo-item>
+    </div>
+  </div>

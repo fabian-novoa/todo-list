@@ -1,0 +1,19 @@
+<div class="todo-item" [class.completed]="todo.completed">
+    <div class="todo-content">
+      <div class="todo-checkbox">
+        <input 
+          type="checkbox" 
+          [checked]="todo.completed" 
+          (change)="onToggleComplete()"
+        />
+      </div>
+      <div class="todo-details">
+        <h4 class="todo-title">{{ todo.title }}</h4>
+        <p class="todo-description" *ngIf="todo.description">{{ todo.description }}</p>
+      </div>
+    </div>
+    <div class="todo-actions">
+      <button class="btn btn-edit" (click)="onEdit()">Edit</button>
+      <button class="btn btn-delete" (click)="onDelete()">Delete</button>
+    </div>
+  </div>

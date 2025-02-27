@@ -1,1 +1,221 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables globales */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --danger-color: #e74c3c;
+    --light-color: #ecf0f1;
+    --dark-color: #34495e;
+    --border-color: #bdc3c7;
+    --background-color: #f9f9f9;
+  }
+  
+  /* Estilos globales */
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--dark-color);
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .app-header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .app-content {
+    flex: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .app-footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: auto;
+  }
+  
+  /* Estilos para formularios */
+  .todo-form {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+  }
+  
+  .checkbox {
+    display: flex;
+    align-items: center;
+  }
+  
+  .checkbox input {
+    margin-right: 0.5rem;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #7f8c8d;
+  }
+  
+  .btn-edit {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-delete {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  /* Estilos para la lista de tareas */
+  .todo-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .todo-item {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+  }
+  
+  .todo-item.completed {
+    background-color: #f8f9fa;
+    border-left: 4px solid var(--secondary-color);
+  }
+  
+  .todo-item.completed .todo-title {
+    text-decoration: line-through;
+    color: #7f8c8d;
+  }
+  
+  .todo-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+  }
+  
+  .todo-checkbox input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  
+  .todo-details {
+    flex: 1;
+  }
+  
+  .todo-title {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+  }
+  
+  .todo-description {
+    margin: 0;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+  }
+  
+  .todo-actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+  
+  .error-message {
+    color: var(--danger-color);
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(231, 76, 60, 0.1);
+    border-radius: 4px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 1rem;
+    color: #7f8c8d;
+  }
+  
+  .no-todos {
+    text-align: center;
+    padding: 2rem;
+    color: #7f8c8d;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+  }
